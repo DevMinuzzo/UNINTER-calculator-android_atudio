@@ -33,12 +33,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // Inicializando os componentes da View
         getSupportActionBar().hide();
         _initNumbers();
         _initOperations();
         _initDisplays();
 
+        // Definindo o comportamento de click para cada botão utilizando o OnClick da MainActivity
         btnNumber0.setOnClickListener(this);
         btnNumber1.setOnClickListener(this);
         btnNumber2.setOnClickListener(this);
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMultiplication.setOnClickListener(this);
         btnDivision.setOnClickListener(this);
 
+        // Definindo comportamentos de OnClick específicos para os botões de limpar e igual
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Concatena os valores de cada botão número ou de operação no display de expressão
     private void addExpression(String string) {
+        // Caso algum resultado tenha sido adquirido, os displays são limpos para a próxima expressão
         if (this.isResetExpression()) {
             displayExpression.setText("");
             displayResult.setText("");
@@ -109,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // Método OnClick para tratar de componentes com comportamentos semelhantes, como números e operações
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
@@ -201,7 +205,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         displayResult = (TextView) findViewById(R.id.displayResult);
     }
 
-
+    // GETTERS E SETTERS
     private boolean isResetExpression() {
         return resetExpression;
     }
