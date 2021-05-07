@@ -17,7 +17,6 @@
             android:id="@+id/displayExpression"
             style="@style/display"
             android:layout_height="40dp"
-            android:text="5+5"
             android:textSize="30sp"
             android:textColor="@color/light_black"
             android:layout_marginTop="20dp"
@@ -26,7 +25,6 @@
             android:id="@+id/displayResult"
             style="@style/display"
             android:layout_height="60dp"
-            android:text="10"
             android:textSize="40sp"
             android:textColor="@color/black"
             android:layout_marginBottom="20dp"
@@ -45,9 +43,16 @@
             android:orientation="horizontal">
             <Button
                 android:id="@+id/btnClear"
-                android:layout_weight="3"
                 style="@style/btn_operation"
                 android:text="C"/>
+            <Button
+                android:id="@+id/btnParenthesisLeft"
+                style="@style/btn_operation"
+                android:text="("/>
+            <Button
+                android:id="@+id/btnParenthesisRight"
+                style="@style/btn_operation"
+                android:text=")"/>
             <Button
                 android:id="@+id/btnDivision"
                 style="@style/btn_operation"
